@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RateLab - Currency Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-dot"></span>
+            RATELAB
+        </div>
+
+        <div class="status">
+            <span></span>
+            พร้อมใช้งาน
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div>
+
+            <p class="kicker">
+                CURRENCY / CONVERTER
+            </p>
+
+            <h1>
+                แปลงเงินให้รู้เรื่อง<br>
+                <em>ในไม่กี่วินาที</em>
+            </h1>
+
+        </div>
+
+        <p class="hero-description">
+            เครื่องมือแปลงสกุลเงิน
+            THB, USD และ EUR
+            พร้อมดูประวัติรายการล่าสุด
+        </p>
+
+    </section>
+
+
+    <!-- CONVERTER -->
+    <section class="converter">
+
+        <div class="converter-header">
+
+            <div>
+                <p class="small-title">
+                    CURRENCY CONVERTER
+                </p>
+
+                <h2>
+                    แปลงสกุลเงิน
+                </h2>
+            </div>
+
+            <div id="rate-badge" class="rate-badge">
+                พร้อมคำนวณ
+            </div>
+
+        </div>
+
+
+        <!-- CURRENCY BOXES -->
+        <div class="currency-area">
+
+
+            <!-- FROM -->
+            <div class="currency-box">
+
+                <div class="currency-top">
+
+                    <div class="currency-symbol">
+                        ฿
+                    </div>
+
+                    <select id="currency-one">
+
+                        <option value="THB">
+                            THB
+                        </option>
+
+                        <option value="USD">
+                            USD
+                        </option>
+
+                        <option value="EUR">
+                            EUR
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <label for="amount-one">
+                    จำนวนเงินต้นทาง
+                </label>
+
+                <input
+                    id="amount-one"
+                    type="number"
+                    step="any"
+                    placeholder="0.00"
+                >
+
+            </div>
+
+
+            <!-- SWAP -->
+            <button
+                id="swap"
+                class="swap-button"
+                type="button"
+            >
+                ⇄
+            </button>
+
+
+            <!-- TO -->
+            <div class="currency-box result-box">
+
+                <div class="currency-top">
+
+                    <div class="currency-symbol dark">
+                        ◎
+                    </div>
+
+                    <select id="currency-two">
+
+                        <option value="USD">
+                            USD
+                        </option>
+
+                        <option value="THB">
+                            THB
+                        </option>
+
+                        <option value="EUR">
+                            EUR
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <label for="amount-two">
+                    ผลลัพธ์
+                </label>
+
+                <input
+                    id="amount-two"
+                    type="number"
+                    step="any"
+                    placeholder="0.00"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULT -->
+        <div class="converter-footer">
+
+            <div class="rate-info">
+
+                <div class="rate-icon">
+                    ≈
+                </div>
+
+                <div>
+
+                    <p id="rate">
+                        กรอกจำนวนเงินเพื่อเริ่มคำนวณ
+                    </p>
+
+                    <small id="time">
+                        ยังไม่มีรายการคำนวณ
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <button
+                    id="clear"
+                    class="clear-button"
+                    type="button"
+                >
+                    ล้าง
+                </button>
+
+                <button
+                    id="convert"
+                    class="convert-button"
+                    type="button"
+                >
+                    แปลงเงิน
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOWER CONTENT -->
+    <section class="lower">
+
+
+        <!-- SUPPORTED -->
+        <div class="supported">
+
+            <p class="small-title">
+                SUPPORTED CURRENCIES
+            </p>
+
+
+            <div class="currency-list">
+
+                <div class="currency-item">
+
+                    <b>฿</b>
+
+                    <strong>
+                        THB
+                    </strong>
+
+                    <span>
+                        บาทไทย
+                    </span>
+
+                </div>
+
+
+                <div class="currency-item">
+
+                    <b>$</b>
+
+                    <strong>
+                        USD
+                    </strong>
+
+                    <span>
+                        ดอลลาร์สหรัฐ
+                    </span>
+
+                </div>
+
+
+                <div class="currency-item">
+
+                    <b>€</b>
+
+                    <strong>
+                        EUR
+                    </strong>
+
+                    <span>
+                        ยูโร
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HISTORY -->
+        <div class="history">
+
+            <div class="history-header">
+
+                <div>
+
+                    <p class="small-title">
+                        RECENT ACTIVITY
+                    </p>
+
+                    <h2>
+                        รายการล่าสุด
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="clear-history"
+                    type="button"
+                >
+                    ล้างทั้งหมด
+                </button>
+
+            </div>
+
+
+            <ul id="history"></ul>
+
+
+            <div
+                id="empty-history"
+                class="empty-history"
+            >
+
+                <span>
+                    ○
+                </span>
+
+                <p>
+                    ยังไม่มีรายการ<br>
+                    ผลการแปลงจะแสดงที่นี่
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <span>
+            RATELAB
+        </span>
+
+        <span>
+            THB / USD / EUR
+        </span>
+
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
